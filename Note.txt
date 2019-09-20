@@ -38,3 +38,32 @@ tips: webpack是基于node开发的模块打包工具 本质是node实现的
 ### 局部安装 可以在不同的项目中使用不同版本的webpack
 
 2-4、 使用webpack配置文件
+
+##配置文件webpack.config.js
+1、运行npx webapck index.js 实际上是用webpack默认配置进行打包的，默认打包好之后生成dist目录下的main.js
+2、而项目中可以自己进行webpack配置
+根目录下新建 webpack.config.js 进行配置打包 --- 可以自定义入口文件  打包好之后的文件目录
+此时直接运行npx webpack 即可运行
+tips: 运行npx webpack  默认配置文件名必须是webpack.config.js
+	 如果想用自定义文件名 则需要运行：npx webpack --config webpackconfig.js（自定义配置文件名）
+
+## 项目结构目录优化（eg: test）
+1、源文件放到src目录下
+2、修改webpack.config.js的打包入口文件路径
+
+## npm scripts 简化代码
+在package.js的script里配置： "budle": "webpack"
+然后执行 npm run bundle命令即可启动  不需用npx webpack启动了
+
+
+###小结： 三种方式webpack打包
+1、global
+   webpack index.js
+2、local
+   npx webpack index.js
+3、npm scripts
+   npm run bundle --> webpack
+
+tips: webpack-cli的作用是 使得能在命令行里运行webpack命令
+
+Q：阅读webpack官方文档（英文版） --- GUIDES -> Getting Started相关内容
