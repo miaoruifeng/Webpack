@@ -1,0 +1,19 @@
+###听课笔记
+
+2-1、2-2  什么是模块打包工具
+#安装webpack
+1. 当前目录下， npm init ---(生成package.json)
+2. npm install webpack-cli --save-dev
+3. npm install webpack(可有可无)
+4. npx webpack index.js(用webpack对index.js进行打包)
+
+## webpack是一个模块打包工具 --- ES Module模块引入方式
+#还有别的模块引入：
+	CommonJS 模块引入规范（nodeJs）
+	CMD
+	AMD
+
+Q：阅读webpack官方文档（英文版） ---Modules相关内容
+
+2-3、 搭建webpack环境
+tips: webpack是基于node开发的模块打包工具 本质是node实现的
