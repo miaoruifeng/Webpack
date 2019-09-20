@@ -1,13 +1,13 @@
-###听课笔记
+#听课笔记
 
 2-1、2-2  什么是模块打包工具
-#安装webpack
+##安装webpack
 1. 当前目录下， npm init ---(生成package.json)
 2. npm install webpack-cli --save-dev
 3. npm install webpack(可有可无)
 4. npx webpack index.js(用webpack对index.js进行打包)
 
-## webpack是一个模块打包工具 --- ES Module模块引入方式
+### webpack是一个模块打包工具 --- ES Module模块引入方式
 #还有别的模块引入：
 	CommonJS 模块引入规范（nodeJs）
 	CMD
@@ -17,3 +17,24 @@ Q：阅读webpack官方文档（英文版） ---Modules相关内容
 
 2-3、 搭建webpack环境
 tips: webpack是基于node开发的模块打包工具 本质是node实现的
+
+##全局安装
+安装： 
+	npm install webpack webapck-cli -g
+	tip: webpack -v 查看是否安装成功
+卸载webpack：
+	npm uninstall webpack webapck-cli -g
+
+##项目中安装webpack
+安装： 
+	npm install webpack webapck-cli -D(或--save-dev)
+	tip： npx webpack -v 查看是否安装成功
+	npx 会在当前目录下的 modules 里面找webpack
+
+	tips: npm init -y ---自动初始化
+		  npm info webapck ---查看webpack历史版本
+		  npm install webpack@版本号 webapck-cli -D ---安装指定版本的webpack
+
+### 局部安装 可以在不同的项目中使用不同版本的webpack
+
+2-4、 使用webpack配置文件
