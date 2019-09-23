@@ -1,5 +1,7 @@
 #听课笔记
 
+////////////////////////////////////////
+
 2-1、2-2  什么是模块打包工具
 ##安装webpack
 1. 当前目录下， npm init ---(生成package.json)
@@ -67,3 +69,47 @@ tips: 运行npx webpack  默认配置文件名必须是webpack.config.js
 tips: webpack-cli的作用是 使得能在命令行里运行webpack命令
 
 Q：阅读webpack官方文档（英文版） --- GUIDES -> Getting Started相关内容
+
+
+///////////////////////////////////////
+
+3-1、什么是Loader
+Q：a. webpack 是什么
+   b. 模块是什么
+   c. webpack 的配置文件的作用是什么
+## webpack不能识别非js结尾的文件， 所有需要loader来让webpack识别（loader即是webpack打包的一种方案）
+
+3-2、使用loader打包静态资源（图片篇）
+## file-loader
+1. 配置打包生产的图片文件名称；
+2. 配置图片路径
+## url-loader
+打包图片资源，会吧图片转换成一个base64的字符串，然后直接放到bundle.js里，而不是直接生成图片文件
+优点：省了一次http请求
+缺点：加载js文件时间比较长，影响页面渲染速度
+所以：适合小图片（几kb），大图片不适合
+所以进一步配置loader： 添加配置limit：2048字节（2kb）
+图片小于2048字节，会直接打包到js文件里，大于2048则打包成单独的图片文件
+tips: url-loader与file-loader类似，不过多了一个limit配置项
+
+Q: 阅读url-loader、file-loader官方文档
+
+3-3、使用loader打包静态资源（样式篇-上）
+## style-loader  css-loader
+
+## 使用sass --- sass-loader
+1. 安装sass --- npm install sass-loader node-sass --save-dev
+2. 配置scss，并引入sass-loader
+3. 注意配置顺序：loader执行顺序：从下到上 从右到左
+	'style-loader': 将js字符串转换成style节点
+	'css-loader': 将css转换成CommonJs模块
+	'sass-loader': 将 sass 编译成 css
+## css厂商前缀 --- postcss-loader
+1. 配置 postcss-loader
+2. 根目录下新建postcss.config.js
+3. 依赖第三方插件 --- autoprefixer 进行配置 
+tips: 需要在package.json里配置browserslist才能起作用
+
+3-3、使用loader打包静态资源（样式篇-下）
+## 配置importLoaders --- 保证有引用多次的css文件都能执行
+## css模块化

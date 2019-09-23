@@ -7,10 +7,28 @@
     "webpack": "^4.40.2",
     "webpack-cli": "^3.3.9"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "autoprefixer": "^9.6.1",
+    "css-loader": "^3.2.0",
+    "file-loader": "^4.2.0",
+    "node-sass": "^4.12.0",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^8.0.0",
+    "style-loader": "^1.0.0",
+    "url-loader": "^2.1.0"
+  },
   "scripts": {
     "bundle": "webpack"
   },
   "author": "miaoruifeng",
-  "license": "ISC"
+  "license": "ISC",
+  "browserslist": [
+    "defaults",
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8",
+    "iOS >= 8",
+    "Firefox >= 20",
+    "Android > 4.4"
+  ]
 }

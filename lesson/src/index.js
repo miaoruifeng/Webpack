@@ -12,10 +12,18 @@
 // import Content from './content.js';
 
 //ComnonJS 模块引入
-const Header = require('./header.js');
-const Sidebar = require('./sidebar.js');
-const Content = require('./content.js');
+// const Header = require('./header.js');
+// const Sidebar = require('./sidebar.js');
+// const Content = require('./content.js');
 
-new Header();
-new Sidebar();
-new Content();
+// new Header();
+// new Sidebar();
+// new Content();
+
+import avatar from './avatar.jpg';
+import './index.scss';
+
+var img = new Image();
+img.src = avatar;
+img.classList.add('avatar');
+document.getElementById('root').append(img);
