@@ -1,7 +1,11 @@
 const path = require('path'); //引入名字叫path的node的核心模块
 
 module.exports = {
-    entry: './src/index.js', //打包入口文件 
+    mode: 'production', // production or development
+    // entry: './src/index.js', //打包入口文件 
+    entry: {
+        main: './src/index.js'
+    },
     output: {
         filename: 'main.js', //打包文件存放目录
         // 调用path模块的resolve方法，__dirname变量实际指的就是webpack.config.js所在的当前目录的路径

@@ -52,7 +52,7 @@ tips: 运行npx webpack  默认配置文件名必须是webpack.config.js
 2、修改webpack.config.js的打包入口文件路径
 
 ## npm scripts 简化代码
-在package.js的script里配置： "budle": "webpack"
+在package.js的script里配置： "bundle": "webpack"
 然后执行 npm run bundle命令即可启动  不需用npx webpack启动了
 
 
