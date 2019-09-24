@@ -112,4 +112,21 @@ tips: 需要在package.json里配置browserslist才能起作用
 
 3-3、使用loader打包静态资源（样式篇-下）
 ## 配置importLoaders --- 保证有引用多次的css文件都能执行
-## css模块化
+## css打包模块化 --- css Module -> css 只在对应模块里有效
+## 使用webpack打包字体文件 --- 使用file-loader打包
+
+Q: 阅读官网相关：GUIDES -> Asset-Management
+				关于样式打包相关Loaders
+
+3-5、使用plugins让打包更便捷
+## webpack中 plugin 的作用： 
+   plugin可以在webpack运行在某个时刻的时候，帮你做一些事（类似vue生命周期钩子）
+
+1. htmlWebpackPlugin 插件  --- npm install html-webpack-plugin 
+   会在打包结束后自动生成html文件 并把打包生成的js自动引入到html文件中
+   htmlWebpackPlugin 中可以配置模板文件 --> src/index.html
+2. cleanWebpackPlugin 插件 --- npm instll clean-webpack-plugin
+   会在打包之前移除dist目录，然后重新打包
+
+3-6、Entry 与 Output 的基础配置
+	

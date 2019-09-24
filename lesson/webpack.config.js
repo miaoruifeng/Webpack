@@ -1,4 +1,6 @@
 const path = require('path'); //引入名字叫path的node的核心模块
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   mode: 'development', // production or development
@@ -25,14 +27,29 @@ module.exports = {
         {
           loader: 'css-loader',
           options: {
-            importLoaders: 2
+            importLoaders: 2,
+            // modules: true
           }
         },
         'postcss-loader',
         'sass-loader'
       ]
+    }, {
+      test: /\.(eot|woff|ttf|svg)$/,
+      use: {
+        loader: 'file-loader',
+        options: {
+          outputPath: 'font/'
+        }
+      }
     }]
   },
+  plugins: [
+    new CleanWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      template: 'src/index.html'
+    })
+  ],
   output: {
     filename: 'main.js', //打包文件存放目录
     // 调用path模块的resolve方法，__dirname变量实际指的就是webpack.config.js所在的当前目录的路径

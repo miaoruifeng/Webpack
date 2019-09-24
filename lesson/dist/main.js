@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\")(false);\n// Module\nexports.push([module.i, \"body .avatar {\\n  width: 150px;\\n  height: 150px;\\n  -webkit-transform: translate(20px, 20px);\\n          transform: translate(20px, 20px); }\\n\", \"\"]);\n\n\n//# sourceURL=webpack:///./src/index.scss?./node_modules/css-loader/dist/cjs.js??ref--5-1!./node_modules/postcss-loader/src!./node_modules/sass-loader/dist/cjs.js");
+eval("exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\")(false);\n// Imports\nvar getUrl = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/getUrl.js */ \"./node_modules/css-loader/dist/runtime/getUrl.js\");\nvar ___CSS_LOADER_URL___0___ = getUrl(__webpack_require__(/*! ./font/iconfont.eot?t=1569294884433 */ \"./src/font/iconfont.eot?t=1569294884433\"));\nvar ___CSS_LOADER_URL___1___ = getUrl(__webpack_require__(/*! ./font/iconfont.eot?t=1569294884433 */ \"./src/font/iconfont.eot?t=1569294884433\") + \"#iefix\");\nvar ___CSS_LOADER_URL___2___ = getUrl(__webpack_require__(/*! ./font/iconfont.woff?t=1569294884433 */ \"./src/font/iconfont.woff?t=1569294884433\"));\nvar ___CSS_LOADER_URL___3___ = getUrl(__webpack_require__(/*! ./font/iconfont.ttf?t=1569294884433 */ \"./src/font/iconfont.ttf?t=1569294884433\"));\nvar ___CSS_LOADER_URL___4___ = getUrl(__webpack_require__(/*! ./font/iconfont.svg?t=1569294884433 */ \"./src/font/iconfont.svg?t=1569294884433\") + \"#iconfont\");\n// Module\nexports.push([module.i, \"body .avatar {\\n  width: 150px;\\n  height: 150px;\\n  -webkit-transform: translate(20px, 20px);\\n          transform: translate(20px, 20px); }\\n\\n@font-face {\\n  font-family: \\\"iconfont\\\";\\n  src: url(\" + ___CSS_LOADER_URL___0___ + \");\\n  /* IE9 */\\n  src: url(\" + ___CSS_LOADER_URL___1___ + \") format(\\\"embedded-opentype\\\"), url(\\\"data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAP0AAsAAAAACFAAAAOnAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCCcAqEVINvATYCJAMICwYABCAFhG0HNhsbB1GUDUqH7IckCaTTRojhrUu8gAUAwK9wgIMFFgIBIUTLltnbbx1QtUp816UKieoW4VCgJMIhPA6F60bcvXvdMZdQ5KG7tmJvNf+4pOnfyXU5pppG4lqHUUVIEA4Hk3OZ/POSDsE9qCGRJU5tawMDAjd2syTM5BSf78Hl9P8rSmQeUC5zbB0TMLEC2pvCtmiBBOYNYzcRNMTTBJqmxfQdrO+ewqgMTArEtRQGjGbUckNuqAvVipVZvBhST0+pBzzz78e/TIySVAqg4PhqzYbFryRMKG5L4oIiONMZYayjwCaQifNK86GBKLxpQNMLD5oH28oNvpKlRtmb/eMRRBUQt2XCJPuaOJh7qX0SyDA6egfwOchBczUG50pSaaDVGqSxsiQLP4kxslCDFZ6YaY1LFYb2aVI4hLJQGQCEIoX7QuHu6QMoHVR8IVe8KfWt49xP+MncVvr6tk0Rwk8s+xb71wvmwxBU/YTwqY2LvSEFdBFBNlhI/IA3XfBhNFhD6xL327zJnrx07oR7Z0FJO4ojYfHEBnZP0d6D/Kjek7s65YAcqsfyUQ3me9AoHyM3dRHoCN2cWe9q2PSs5GeH9ONfPjkuNP8f9JQiagEMap57v67ErpOHrrAmLWIrCS9K2gZmAiQrNZR/hWUUN4DpkOm8f53j7CmP8zHgrw0bDcBmqjAfk5dPt6jQlpXr7P7fmHYDbtP5/1bKmWUrLKrt7fKBkGNzhckGjRedHBfxaSPVF0fKeWPhASAgvS9+eSB0YKVg1J9kLomll1Zo6/nw52gRUuejubOFRZ2/9wu3ye82tB+mfnDF6oPSVqnzueY1JVgEKHvFR1H6y7/xWnPjt8+k/FtQBh/dYxt3lr0M3ayg/i4swT/ldGzIPg9oUnY5lfHkHcbflbiZ6EoA9qGfodZxoBhD3eTIkNRMQaFuEc2ETaho2YKqum1o2rCxvmVEGRC5gXVPEoS+LiRdb1Do+0Iz4RsqJvxCVT8GoOkyvHZsWQ45nq3QILSZ2WbSCnyOdDQuco9R1F1DpXmcdI5KSx9LJ1L52Ab6qKaYoxsiQ8QZV4HH1qXz0HUDFqqghhYlqkRhJZnkVVdKWIEH4/YpyECQjTG1MZIl4OO0PRkvfP4YEupcBtVQ0qM/hxRNds+kJaQ6oBtiv1PJrfTXGoQMQrg6jlMCHmZdNiIXhgNMWD2sBllIQnVAMFSRVFrxruLE8lLv7Uq9xDJAkQL2KbQfZbtu+AK7XAkAAA==\\\") format(\\\"woff2\\\"), url(\" + ___CSS_LOADER_URL___2___ + \") format(\\\"woff\\\"), url(\" + ___CSS_LOADER_URL___3___ + \") format(\\\"truetype\\\"), url(\" + ___CSS_LOADER_URL___4___ + \") format(\\\"svg\\\");\\n  /* iOS 4.1- */ }\\n\\n.iconfont {\\n  font-family: \\\"iconfont\\\" !important;\\n  font-size: 16px;\\n  font-style: normal;\\n  -webkit-font-smoothing: antialiased;\\n  -moz-osx-font-smoothing: grayscale; }\\n\\n.iconziyuanguanli:before {\\n  content: \\\"\\\\e62f\\\"; }\\n\\n.icon {\\n  margin: 20px; }\\n\", \"\"]);\n\n\n//# sourceURL=webpack:///./src/index.scss?./node_modules/css-loader/dist/cjs.js??ref--5-1!./node_modules/postcss-loader/src!./node_modules/sass-loader/dist/cjs.js");
 
 /***/ }),
 
@@ -106,6 +106,18 @@ eval("exports = module.exports = __webpack_require__(/*! ../node_modules/css-loa
 
 "use strict";
 eval("\n\n/*\n  MIT License http://www.opensource.org/licenses/mit-license.php\n  Author Tobias Koppers @sokra\n*/\n// css base code, injected by the css-loader\n// eslint-disable-next-line func-names\nmodule.exports = function (useSourceMap) {\n  var list = []; // return the list of modules as css string\n\n  list.toString = function toString() {\n    return this.map(function (item) {\n      var content = cssWithMappingToString(item, useSourceMap);\n\n      if (item[2]) {\n        return \"@media \".concat(item[2], \"{\").concat(content, \"}\");\n      }\n\n      return content;\n    }).join('');\n  }; // import a list of modules into the list\n  // eslint-disable-next-line func-names\n\n\n  list.i = function (modules, mediaQuery) {\n    if (typeof modules === 'string') {\n      // eslint-disable-next-line no-param-reassign\n      modules = [[null, modules, '']];\n    }\n\n    var alreadyImportedModules = {};\n\n    for (var i = 0; i < this.length; i++) {\n      // eslint-disable-next-line prefer-destructuring\n      var id = this[i][0];\n\n      if (id != null) {\n        alreadyImportedModules[id] = true;\n      }\n    }\n\n    for (var _i = 0; _i < modules.length; _i++) {\n      var item = modules[_i]; // skip already imported module\n      // this implementation is not 100% perfect for weird media query combinations\n      // when a module is imported multiple times with different media queries.\n      // I hope this will never occur (Hey this way we have smaller bundles)\n\n      if (item[0] == null || !alreadyImportedModules[item[0]]) {\n        if (mediaQuery && !item[2]) {\n          item[2] = mediaQuery;\n        } else if (mediaQuery) {\n          item[2] = \"(\".concat(item[2], \") and (\").concat(mediaQuery, \")\");\n        }\n\n        list.push(item);\n      }\n    }\n  };\n\n  return list;\n};\n\nfunction cssWithMappingToString(item, useSourceMap) {\n  var content = item[1] || ''; // eslint-disable-next-line prefer-destructuring\n\n  var cssMapping = item[3];\n\n  if (!cssMapping) {\n    return content;\n  }\n\n  if (useSourceMap && typeof btoa === 'function') {\n    var sourceMapping = toComment(cssMapping);\n    var sourceURLs = cssMapping.sources.map(function (source) {\n      return \"/*# sourceURL=\".concat(cssMapping.sourceRoot).concat(source, \" */\");\n    });\n    return [content].concat(sourceURLs).concat([sourceMapping]).join('\\n');\n  }\n\n  return [content].join('\\n');\n} // Adapted from convert-source-map (MIT)\n\n\nfunction toComment(sourceMap) {\n  // eslint-disable-next-line no-undef\n  var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));\n  var data = \"sourceMappingURL=data:application/json;charset=utf-8;base64,\".concat(base64);\n  return \"/*# \".concat(data, \" */\");\n}\n\n//# sourceURL=webpack:///./node_modules/css-loader/dist/runtime/api.js?");
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/runtime/getUrl.js":
+/*!********************************************************!*\
+  !*** ./node_modules/css-loader/dist/runtime/getUrl.js ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nmodule.exports = function (url, needQuotes) {\n  // eslint-disable-next-line no-underscore-dangle, no-param-reassign\n  url = url.__esModule ? url.default : url;\n\n  if (typeof url !== 'string') {\n    return url;\n  } // If url is already wrapped in quotes, remove them\n\n\n  if (/^['\"].*['\"]$/.test(url)) {\n    // eslint-disable-next-line no-param-reassign\n    url = url.slice(1, -1);\n  } // Should url be wrapped?\n  // See https://drafts.csswg.org/css-values-3/#urls\n\n\n  if (/[\"'() \\t\\n]/.test(url) || needQuotes) {\n    return \"\\\"\".concat(url.replace(/\"/g, '\\\\\"').replace(/\\n/g, '\\\\n'), \"\\\"\");\n  }\n\n  return url;\n};\n\n//# sourceURL=webpack:///./node_modules/css-loader/dist/runtime/getUrl.js?");
 
 /***/ }),
 
@@ -132,6 +144,74 @@ eval("module.exports = __webpack_require__.p + \"images/avatar_80d953962f8d6ca9e
 
 /***/ }),
 
+/***/ "./src/createAvatar.js":
+/*!*****************************!*\
+  !*** ./src/createAvatar.js ***!
+  \*****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _avatar_jpg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./avatar.jpg */ \"./src/avatar.jpg\");\n/* harmony import */ var _avatar_jpg__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_avatar_jpg__WEBPACK_IMPORTED_MODULE_0__);\n\r\n// import style from './index.scss';\r\n\r\nfunction createAvatar() {\r\n    var img = new Image();\r\n    img.src = _avatar_jpg__WEBPACK_IMPORTED_MODULE_0___default.a;\r\n    img.classList.add('avatar');\r\n    // img.classList.add(style.avatar);\r\n    document.getElementById('root').append(img);\r\n}\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (createAvatar);\n\n//# sourceURL=webpack:///./src/createAvatar.js?");
+
+/***/ }),
+
+/***/ "./src/createIconfont.js":
+/*!*******************************!*\
+  !*** ./src/createIconfont.js ***!
+  \*******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\nfunction createIconfont() {\r\n    var iconfont = document.createElement('div');\r\n    iconfont.innerHTML = '<div class=\"icon iconfont iconziyuanguanli\"></div>'\r\n    document.getElementById('root').append(iconfont);\r\n}\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (createIconfont);\n\n//# sourceURL=webpack:///./src/createIconfont.js?");
+
+/***/ }),
+
+/***/ "./src/font/iconfont.eot?t=1569294884433":
+/*!***********************************************!*\
+  !*** ./src/font/iconfont.eot?t=1569294884433 ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"font/54284a56abce7a4b513d7980856999b4.eot\";\n\n//# sourceURL=webpack:///./src/font/iconfont.eot?");
+
+/***/ }),
+
+/***/ "./src/font/iconfont.svg?t=1569294884433":
+/*!***********************************************!*\
+  !*** ./src/font/iconfont.svg?t=1569294884433 ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"font/0bd7a9fc396098469a4655579cb2c658.svg\";\n\n//# sourceURL=webpack:///./src/font/iconfont.svg?");
+
+/***/ }),
+
+/***/ "./src/font/iconfont.ttf?t=1569294884433":
+/*!***********************************************!*\
+  !*** ./src/font/iconfont.ttf?t=1569294884433 ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"font/f30ee74923f0e4eb53e813cc69bc7c68.ttf\";\n\n//# sourceURL=webpack:///./src/font/iconfont.ttf?");
+
+/***/ }),
+
+/***/ "./src/font/iconfont.woff?t=1569294884433":
+/*!************************************************!*\
+  !*** ./src/font/iconfont.woff?t=1569294884433 ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"font/73736495453929b206e737b049200cfa.woff\";\n\n//# sourceURL=webpack:///./src/font/iconfont.woff?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
@@ -140,7 +220,7 @@ eval("module.exports = __webpack_require__.p + \"images/avatar_80d953962f8d6ca9e
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _avatar_jpg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./avatar.jpg */ \"./src/avatar.jpg\");\n/* harmony import */ var _avatar_jpg__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_avatar_jpg__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./index.scss */ \"./src/index.scss\");\n/* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_index_scss__WEBPACK_IMPORTED_MODULE_1__);\n// ES Module 模块引入\r\n// CommonJS 模块引入规范（nodeJs）\r\n// CMD\r\n// AMD\r\n\r\n// webpack 是一个模块打包工具\r\n\r\n\r\n// Module 模块引入\r\n// import Header from './header.js';\r\n// import Sidebar from './sidebar.js';\r\n// import Content from './content.js';\r\n\r\n//ComnonJS 模块引入\r\n// const Header = require('./header.js');\r\n// const Sidebar = require('./sidebar.js');\r\n// const Content = require('./content.js');\r\n\r\n// new Header();\r\n// new Sidebar();\r\n// new Content();\r\n\r\n\r\n\r\n\r\nvar img = new Image();\r\nimg.src = _avatar_jpg__WEBPACK_IMPORTED_MODULE_0___default.a;\r\nimg.classList.add('avatar');\r\ndocument.getElementById('root').append(img);\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _avatar_jpg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./avatar.jpg */ \"./src/avatar.jpg\");\n/* harmony import */ var _avatar_jpg__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_avatar_jpg__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./index.scss */ \"./src/index.scss\");\n/* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_index_scss__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _createAvatar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./createAvatar */ \"./src/createAvatar.js\");\n/* harmony import */ var _createIconfont__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./createIconfont */ \"./src/createIconfont.js\");\n// ES Module 模块引入\r\n// CommonJS 模块引入规范（nodeJs）\r\n// CMD\r\n// AMD\r\n\r\n// webpack 是一个模块打包工具\r\n\r\n\r\n// Module 模块引入\r\n// import Header from './header.js';\r\n// import Sidebar from './sidebar.js';\r\n// import Content from './content.js';\r\n\r\n//ComnonJS 模块引入\r\n// const Header = require('./header.js');\r\n// const Sidebar = require('./sidebar.js');\r\n// const Content = require('./content.js');\r\n\r\n// new Header();\r\n// new Sidebar();\r\n// new Content();\r\n\r\n\r\n// css模块打包  使得css只作用于对应模块\r\n\r\n\r\n\r\nObject(_createAvatar__WEBPACK_IMPORTED_MODULE_2__[\"default\"])();\r\n\r\nvar img = new Image();\r\nimg.src = _avatar_jpg__WEBPACK_IMPORTED_MODULE_0___default.a;\r\nimg.classList.add('avatar');\r\ndocument.getElementById('root').append(img);\r\n\r\n// 字体文字打包\r\n\r\n\r\nObject(_createIconfont__WEBPACK_IMPORTED_MODULE_3__[\"default\"])();\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ }),
 

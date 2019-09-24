@@ -21,9 +21,18 @@
 // new Content();
 
 import avatar from './avatar.jpg';
+// css模块打包  使得css只作用于对应模块
 import './index.scss';
+import createAvatar from './createAvatar';
+
+createAvatar();
 
 var img = new Image();
 img.src = avatar;
 img.classList.add('avatar');
 document.getElementById('root').append(img);
+
+// 字体文字打包
+import createIconfont from './createIconfont'
+
+createIconfont();
