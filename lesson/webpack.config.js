@@ -4,10 +4,18 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   mode: 'development', // production or development
+  devtool: 'cheap-module-eval-source-map', // development环境下
+  // devtool: 'cheap-module-source-map', // production环境下
   // 两种书写方式
   // entry: './src/index.js', //打包入口文件 
   entry: {
-    main: './src/index.js'
+    main: './src/index.js', // 打包多个文件
+    // sub: './src/index.js',
+  },
+  devServer: {
+    contentBase: './dist',
+    open: true,
+    port: 8090
   },
   module: {
     rules: [{
@@ -51,7 +59,8 @@ module.exports = {
     })
   ],
   output: {
-    filename: 'main.js', //打包文件存放目录
+    // publicPath: 'http://cdn.com.cn', // 打包的静态资源存放目录
+    filename: '[name].js', 
     // 调用path模块的resolve方法，__dirname变量实际指的就是webpack.config.js所在的当前目录的路径
     // 然后与dist结合 生成的路径就是bundle的绝对路径
     // 如果是dist目录 则path不写也可以 默认会打包到dist目录下

@@ -36,3 +36,5 @@ document.getElementById('root').append(img);
 import createIconfont from './createIconfont'
 
 createIconfont();
+
+console.log('hello sourceMap!');

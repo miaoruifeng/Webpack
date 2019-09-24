@@ -129,4 +129,30 @@ Q: 阅读官网相关：GUIDES -> Asset-Management
    会在打包之前移除dist目录，然后重新打包
 
 3-6、Entry 与 Output 的基础配置
+1. entry 和 output 在打包多个文件时如何配置
+   entry 的键对应 output的那么占位符
+
+2. 若打包的js文件需要放到特定的域名下  则配置output --> publicPath 
+
+Q: 阅读官网CONFIGRATION --> oUTPUT 相关配置项   Output Management相关
+
+3-7、 sourceMap --- 一种映射关系，映射到入口文件（报错时定位错误）
+	配置：devtool: 'source-map'
+
+3-8、使用webpackDevServer提升开发效率
+## 当源代码发生变化 自动打包 --- 三种方法
+1. watch --> package.json里scripts配置： "watch": "webpack --watch"
+   特点：不需要手动打包，但是不会起一个服务器，即不能进行ajax调试，而且需要手动刷新浏览器
+2. devServer --- 配置contentBase  --- 运行在服务端
+   不但监听到文件发生改变并自动打包，会启动http服务器，而且还会自动刷新浏览器
+3. 添加 open属性
+   还可以自动打开浏览器
+
+### 扩展：自定义server  --- 通过node express 和 webpack-dev-middleware
+npm install express webpack-dev-middleware -D
+
+tips:  a. 在node中直接使用webpack
+	   b. 在命令行里使用webpack
+Q：GUIDES -> Development,  API -> , CONFIGURATION -> Devserver、Devtool
+
 	
