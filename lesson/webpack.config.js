@@ -1,6 +1,7 @@
 const path = require('path'); //引入名字叫path的node的核心模块
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
   mode: 'development', // production or development
@@ -15,7 +16,9 @@ module.exports = {
   devServer: {
     contentBase: './dist',
     open: true,
-    port: 8090
+    port: 8090,
+    hot: true,
+    hotOnly: true // 即便hmr不生效 浏览器也不自动刷新  可配可不配
   },
   module: {
     rules: [{
@@ -28,6 +31,13 @@ module.exports = {
           limit: 20480
         }
       }
+    }, {
+      test: /\.css$/,
+      use: [
+        'style-loader',
+        'css-loader',
+        'postcss-loader'
+      ]
     }, {
       test: /\.scss$/,
       use: [
@@ -56,7 +66,8 @@ module.exports = {
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: 'src/index.html'
-    })
+    }),
+    new webpack.HotModuleReplacementPlugin()
   ],
   output: {
     // publicPath: 'http://cdn.com.cn', // 打包的静态资源存放目录

@@ -34,7 +34,34 @@ document.getElementById('root').append(img);
 
 // 字体文字打包
 import createIconfont from './createIconfont'
-
 createIconfont();
 
+// sourceMap
 console.log('hello sourceMap!');
+
+// Hot Module Replacement
+// css
+import './style.css'
+
+var btn = document.createElement('button');
+btn.innerHTML = '新增';
+document.body.appendChild(btn);
+btn.onclick = function() {
+    var item = document.createElement('div');
+    item.innerHTML = 'item';
+    item.classList.add('item');
+    document.body.appendChild(item);
+}
+
+// js
+import counter from './counter';
+import number from './number';
+
+counter();
+number();
+if (module.hot) {
+    module.hot.accept('./number', () => {
+        document.getElementById('number').remove();
+        number();
+    })
+}

@@ -155,4 +155,15 @@ tips:  a. 在node中直接使用webpack
 	   b. 在命令行里使用webpack
 Q：GUIDES -> Development,  API -> , CONFIGURATION -> Devserver、Devtool
 
+3-9、3-10、Hot Module Replacement（HMR） 热模块更新
+## 配置hmr 
+1. css 实现hmr
+   更改css时，js渲染出的页面结构不会改变（不会刷新页面），只是改css样式
+   css 之所以不需要监控变化 是因为css-loader底层已经实现了监控
+2. js
+   当引入多了模块时，如果一个模块代码发生改变 只更新这块代码 不影响别的模块的代码
+   需要手动监控变化了的模块 --> module.hot.accept()
+
+tips: 例如Vue中不需要监控也是因为vue-loader底层也实现了监控
+Q：GUIDES/API -> Hot Module Replacement
 	
