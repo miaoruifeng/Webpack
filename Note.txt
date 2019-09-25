@@ -181,5 +181,7 @@ tips:
 	如果写的是业务代码 则只需要引入@babelpolyfill 并配置presets；
 	如果写的类库项目代码 则使用@babel/plugin-transform-runtime插件，
 	可以有效避免polyfill的问题（polyfill会污染全局环境）
-	
+
 ## 若babel相关配置options代码太多 可以在更目录下新建 .babelrc文件 放进去
+
+////////////////////////////////////////
