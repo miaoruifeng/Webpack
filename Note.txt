@@ -166,4 +166,20 @@ Q：GUIDES -> Development,  API -> , CONFIGURATION -> Devserver、Devtool
 
 tips: 例如Vue中不需要监控也是因为vue-loader底层也实现了监控
 Q：GUIDES/API -> Hot Module Replacement
+
+3-11、使用babel处理 ES6 语法
+1. 安装相关 并配置
+   npm install --save-dev babel-loader @babel/core
+   npm install @babel/preset-env --save-dev   --> ES6语法转ES5
+2. npm install --save @babel/polyfill
+   部分属性没有 需要babel/polyfill实现
+3. 配置presets --> useBuildIns: 'usage'
+   polyfill按需引入：根据业务代码需求 来注入polyfill对应的内容
+   排除不需要转换的 减小打包生成文件的体积
+
+tips:
+	如果写的是业务代码 则只需要引入@babelpolyfill 并配置presets；
+	如果写的类库项目代码 则使用@babel/plugin-transform-runtime插件，
+	可以有效避免polyfill的问题（polyfill会污染全局环境）
 	
+## 若babel相关配置options代码太多 可以在更目录下新建 .babelrc文件 放进去
