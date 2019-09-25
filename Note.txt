@@ -174,14 +174,41 @@ Q：GUIDES/API -> Hot Module Replacement
 2. npm install --save @babel/polyfill
    部分属性没有 需要babel/polyfill实现
 3. 配置presets --> useBuildIns: 'usage'
-   polyfill按需引入：根据业务代码需求 来注入polyfill对应的内容
+   polyfill按需引入：根据业务代码需求 来注入pollyfill对应的内容
    排除不需要转换的 减小打包生成文件的体积
 
 tips:
-	如果写的是业务代码 则只需要引入@babelpolyfill 并配置presets；
+	如果写的是业务代码 则只需要引入@babel/pollyfill 并配置presets；
 	如果写的类库项目代码 则使用@babel/plugin-transform-runtime插件，
-	可以有效避免polyfill的问题（polyfill会污染全局环境）
+	可以有效避免pollyfill的问题（pollyfill会污染全局环境）
 
 ## 若babel相关配置options代码太多 可以在更目录下新建 .babelrc文件 放进去
 
 ////////////////////////////////////////
+4-1、Tree Shaking 概念详解
+1. Tree Shaking 只支持ES Module引入，不支持CommonJs引入   （development环境）
+	因为ES Module底层是静态引入，而CommonJs底层是动态引入
+2. tree shaking 作用是对一个模块进行处理，引入的部分做打包，不引入的内容剔除掉
+   配置 webpack.config.js: optimization --> usedExports: true
+   (production环境不需用配置optimization)
+3. 配置package.json 
+   sideEffects: false
+   只要运用了tree shaking， 则打包是就会运用这种方式打包
+   当引入类似 @babel/polly-fill的模块时，实际并没有导出任何的内容，所以打包时会剔除掉，这样打包会出错
+   所以需要对这种文件需要做特殊的处理，即配置sideEffects：["@babel/polly-fill"]
+   设置成false 即认为运用了tree shaking方式打包时不需要做任何处理
+
+tips: 特殊处理css文件  默认引入的css文件都需要做处理 --> sideEffects: ["*.css"]
+
+4-2、development 和 production 模式的区分打包
+1. 根目录下创建两个配置： webpack.dev.js / webpack.prod.js
+2. package.json里建两个命里： dev / build 
+3. 二者重复代码处理
+   根目录下新建 webpack.common.js  进行代码合并
+4. 合并： 
+   安装第三方模块： npm install webpack-merge -D  
+   引入merge 和 commonConfig  然后再导出
+5. 新建build文件夹 把三个配置文件放进去 并修改package.json里的启动路径
+
+4-3、webpack和code spliting (代码分割)
+	
