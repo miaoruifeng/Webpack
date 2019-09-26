@@ -21,27 +21,6 @@ module.exports = {
         }
       }
     }, {
-      test: /\.css$/,
-      use: [
-        'style-loader',
-        'css-loader',
-        'postcss-loader'
-      ]
-    }, {
-      test: /\.scss$/,
-      use: [
-        'style-loader',
-        {
-          loader: 'css-loader',
-          options: {
-            importLoaders: 2,
-            // modules: true
-          }
-        },
-        'postcss-loader',
-        'sass-loader'
-      ]
-    }, {
       test: /\.(eot|woff|ttf|svg)$/,
       use: {
         loader: 'file-loader',
@@ -61,9 +40,16 @@ module.exports = {
       template: 'src/index.html'
     })
   ],
+  optimization: { // 同步代码分割需要配置该参数
+    usedExports: true, // tree shaking
+    splitChunks: {
+      chunks: 'all', //默认async - webpack默认只对异步代码分割打包  all / initial / async  结合cacheGroups一起用
+    }
+  },
   output: {
     // publicPath: 'http://cdn.com.cn', // 打包的静态资源存放目录
     filename: '[name].js', 
+    chunkFilename: '[name].chunk.js', // 被main.js异步加载的间接的文件
     // 调用path模块的resolve方法，__dirname变量实际指的就是webpack.config.js所在的当前目录的路径
     // 然后与dist结合 生成的路径就是bundle的绝对路径
     // 如果是dist目录 则path不写也可以 默认会打包到dist目录下

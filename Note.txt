@@ -210,5 +210,65 @@ tips: 特殊处理css文件  默认引入的css文件都需要做处理 --> side
    引入merge 和 commonConfig  然后再导出
 5. 新建build文件夹 把三个配置文件放进去 并修改package.json里的启动路径
 
-4-3、webpack和code spliting (代码分割)
-	
+4-3 4-4、webpack和code spliting (代码分割)
+tips: 代码分割与webpack无关
+## 安装lodash 工具库  可以同步 & 异步获取
+1. 同步代码：通过配置 然后编写同步代码 实现代码分割
+   只需要在webpack.common.js配置optimization -> splitChunks -> chunks: all
+2. 异步代码：即便不配置 写成异步载入组件也可以实现
+   无需做任何配置 会自动进行代码分割  放到新的文件中
+
+4-5 4-6、SplitChunksPlugin 配置参数详解
+1. 自定义lodash文件名 -- 魔法注释
+## 异步代码过程中 实际上配置项对其有影响
+   不配置时打包生成的文件前面带有vendors 配置了之后没有就没了 （配置cacheGroups）
+   所以 不管是同步还是异步代码分割  都要用SplitChunksPlugin
+## SplitChunksPlugin 相关配置
+
+4-7、Lazy Loading懒加载
+## 通过import 异步加载一个模块 
+## chunk概念 --- 打包生成的每一个js文件都是chunk
+### 代码分割 splitChunks 配置相关说明：
+/* 以下配置都是默认配置 所以可以省略 */
+   minSize: 30000, // >30kb 才进行代码分割
+   maxSize: 0,
+   minChunks: 1, // 打包生成的chunks有几个用到当前模块 只要有一个用到就分割代码
+   maxAsyncRequests: 5,
+   maxInitialRequests: 3,
+   automaticNameDelimiter: '~',
+   automaticNameMaxLength: 30,
+   name: true,
+   cacheGroups: {
+      // vendors: false,
+      // default: false
+      vendors: {
+         test: /[\\/]node_modules[\\/]/, // 如果是从node_modules引入的模块 则打包到vendors.js里面，其他的打包到common.js
+         priority: -10, // 优先级
+         // filename: 'vendors.js'
+      },
+      default: {
+         minChunks: 2,
+         priority: -20, // 优先级
+         reuseExistingChunk: true, // 如果一个模块被 打包过 则不会再次被打包
+         filename: 'common.js'
+      }
+   }
+
+4-8、打包分析、 Preloading、 Prefetching
+## 打包分析 - 对打包生成的代码进行分析
+   webpack分析工具 ---  https://github.com/webpack/analyse
+   package.json配置 -- 打包过程中把打包过程中的描述生成stats.json文件
+官网推荐：GUIDES -> Code Splitting -> Bundle Analyse -> Webapck-bundle-analyser
+## Preloading / Prefetching  
+   加载完主体内容  在带宽空闲时加载  然后再次加载时利用本地缓存 从而提高性能
+   Prefetching：核心代码加载完 页面空闲时再加载prefetching对应的文件
+   Preloading：是和主文件一起加载的
+   所以用Prefetching比较合适
+tips: 前端解决优化问题，不应该把重点放在缓存上 而是更应该注重代码复用率 code coverange
+
+4-9、css文件的代码分割
+## css代码分割借助插件 - MiniCssExtractPlugin （production环境使用）
+## 压缩打包多个css文件 - 安装插件：npm install optimize-css-assets-webpack-plugin -D
+## 如果多了入口文件引入的多个css文件最后打包到一个css文件中 则通过配置 splitChunks - cacheGroups 实现
+## 打包自己对应自己的css文件 也可根据splitChunks - cacheGroups配置实现（具体看官网说明）
+

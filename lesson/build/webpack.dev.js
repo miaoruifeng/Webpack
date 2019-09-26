@@ -12,12 +12,33 @@ const devConfig = {
     hot: true,
     // hotOnly: true // 即便hmr不生效 浏览器也不自动刷新  可配可不配
   },
+  module: {
+    rules: [{
+      test: /\.css$/,
+      use: [
+        'style-loader',
+        'css-loader',
+        'postcss-loader'
+      ]
+    }, {
+      test: /\.scss$/,
+      use: [
+        'style-loader',
+        {
+          loader: 'css-loader',
+          options: {
+            importLoaders: 2,
+            // modules: true
+          }
+        },
+        'postcss-loader',
+        'sass-loader'
+      ]
+    }]
+  },
   plugins: [
     new webpack.HotModuleReplacementPlugin()
-  ],
-  optimization: { // development环境下配置  production环境下不需用配置
-    usedExports: true
-  }
+  ]
 }
 
 module.exports = merge(commonConfig, devConfig);
