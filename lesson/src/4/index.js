@@ -45,3 +45,31 @@ document.addEventListener('click', () => {
         func();
     })
 })
+
+/* 4-9 */
+// css文件的代码分割
+import './style.css';
+import './style1.css';
+
+/* 4-10 */
+// 通过contenhash合理利用浏览器缓存
+import _ from 'lodash';
+import $ from 'jquery';
+
+const dom = $('<div>');
+dom.html(_.join(['hello', 'world'], ' '));
+$('body').append(dom);
+
+/* shimming - 垫片 */
+import _ from 'lodash';
+import $ from 'jquery';
+import { ui } from './jquery.ui';
+
+ui();
+
+const dom = $('<div>');
+dom.html(_.join(['hello', 'world'], ' '));
+$('body').append(dom);
+
+// 设置模块里this总是指向window
+console.log(this === window);

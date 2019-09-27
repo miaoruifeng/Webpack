@@ -38,7 +38,11 @@ const devConfig = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin()
-  ]
+  ],
+  output: {
+    filename: '[name].js', 
+    chunkFilename: '[name].js', // 被main.js异步加载的间接的文件
+  }
 }
 
 module.exports = merge(commonConfig, devConfig);

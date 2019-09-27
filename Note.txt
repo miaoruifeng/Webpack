@@ -244,13 +244,13 @@ tips: 代码分割与webpack无关
       vendors: {
          test: /[\\/]node_modules[\\/]/, // 如果是从node_modules引入的模块 则打包到vendors.js里面，其他的打包到common.js
          priority: -10, // 优先级
-         // filename: 'vendors.js'
+         // name: 'vendors'
       },
       default: {
          minChunks: 2,
          priority: -20, // 优先级
          reuseExistingChunk: true, // 如果一个模块被 打包过 则不会再次被打包
-         filename: 'common.js'
+         name: 'common'
       }
    }
 
@@ -272,3 +272,15 @@ tips: 前端解决优化问题，不应该把重点放在缓存上 而是更应�
 ## 如果多了入口文件引入的多个css文件最后打包到一个css文件中 则通过配置 splitChunks - cacheGroups 实现
 ## 打包自己对应自己的css文件 也可根据splitChunks - cacheGroups配置实现（具体看官网说明）
 
+4-10、Webpack 与 浏览器缓存（caching）
+## contenhash -- 给打包生成的文件添加hash值（只对production环境）
+   重新打包后代码有变化 则从新请求代码，若没变化 则利用本地缓存 不再请求代码
+   webpack旧版本需要配置一项：optimization -> runtimeChunk -> name: 'runtime'
+
+4-11、shimming 的作用
+## 当第三方库需要引用另一个第三方库的方法时（eg: 引入jQuery），需要配置 ProvidePlugin 插件
+## 模块里的 this 默认指向该模块
+   使 this 总是指向 window : 安装loader -  npm install imports-loader -D  然后进行配置
+Q: GUIDES -> Shamming
+
+4-12、环境变量的使用

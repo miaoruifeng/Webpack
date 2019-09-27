@@ -1,6 +1,7 @@
 const path = require('path'); //引入名字叫path的node的核心模块
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
   // 两种书写方式
@@ -31,25 +32,43 @@ module.exports = {
     }, {
       test: /\.js$/,
       exclude: /node_modules/,
-      loader: 'babel-loader'
+      use: [{
+        loader: 'babel-loader'
+      }, {
+        loader: 'imports-loader?this=>window' // 使得this总是指向window
+      }]
     }]
   },
   plugins: [
-    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: 'src/index.html'
+    }),
+    new CleanWebpackPlugin(),
+    new webpack.ProvidePlugin({ // shimming 垫片
+      $: 'jquery',
+      _join: ['lodash', 'join'] // 利用shimming自定义方法
     })
   ],
   optimization: { // 同步代码分割需要配置该参数
+    // manifest -- 业务代码和库代码关联内容
+    // runtimeChunk: { // 旧版本的webpack打包时，即便用了contenthash，每次打包还是会生成不同的文件，所以做此配置
+    //   name: 'runtime'
+    // },
     usedExports: true, // tree shaking
     splitChunks: {
       chunks: 'all', //默认async - webpack默认只对异步代码分割打包  all / initial / async  结合cacheGroups一起用
+      cacheGroups: {
+        vendors: {
+          test: /[\\/]node_modules[\\/]/,
+          priority: -10,
+          name: 'vendors'
+        }
+      }
     }
   },
+  performance: false, // 去掉影响性能提示的警告
   output: {
-    // publicPath: 'http://cdn.com.cn', // 打包的静态资源存放目录
-    filename: '[name].js', 
-    chunkFilename: '[name].chunk.js', // 被main.js异步加载的间接的文件
+    // publicPath: 'http://cdn.com.cn', // 打包的静态资源存放cdn目录
     // 调用path模块的resolve方法，__dirname变量实际指的就是webpack.config.js所在的当前目录的路径
     // 然后与dist结合 生成的路径就是bundle的绝对路径
     // 如果是dist目录 则path不写也可以 默认会打包到dist目录下
