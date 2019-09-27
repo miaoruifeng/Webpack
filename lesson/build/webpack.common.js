@@ -1,7 +1,6 @@
 const path = require('path'); //引入名字叫path的node的核心模块
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const webpack = require('webpack');
 
 module.exports = {
   // 两种书写方式
@@ -34,8 +33,6 @@ module.exports = {
       exclude: /node_modules/,
       use: [{
         loader: 'babel-loader'
-      }, {
-        loader: 'imports-loader?this=>window' // 使得this总是指向window
       }]
     }]
   },
@@ -43,17 +40,13 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: 'src/index.html'
     }),
-    new CleanWebpackPlugin(),
-    new webpack.ProvidePlugin({ // shimming 垫片
-      $: 'jquery',
-      _join: ['lodash', 'join'] // 利用shimming自定义方法
-    })
+    new CleanWebpackPlugin()
   ],
   optimization: { // 同步代码分割需要配置该参数
     // manifest -- 业务代码和库代码关联内容
-    // runtimeChunk: { // 旧版本的webpack打包时，即便用了contenthash，每次打包还是会生成不同的文件，所以做此配置
-    //   name: 'runtime'
-    // },
+    runtimeChunk: { // 旧版本的webpack打包时，即便用了contenthash，每次打包还是会生成不同的文件，所以做此配置
+      name: 'runtime'
+    },
     usedExports: true, // tree shaking
     splitChunks: {
       chunks: 'all', //默认async - webpack默认只对异步代码分割打包  all / initial / async  结合cacheGroups一起用

@@ -9,9 +9,7 @@
   "dependencies": {
     "@babel/polyfill": "^7.6.0",
     "jquery": "^3.4.1",
-    "lodash": "^4.17.15",
-    "webpack": "^4.40.2",
-    "webpack-cli": "^3.3.9"
+    "lodash": "^4.17.15"
   },
   "devDependencies": {
     "@babel/core": "^7.6.2",
@@ -23,6 +21,7 @@
     "express": "^4.17.1",
     "file-loader": "^4.2.0",
     "html-webpack-plugin": "^3.2.0",
+    "http-server": "^0.9.0",
     "imports-loader": "^0.8.0",
     "mini-css-extract-plugin": "^0.8.0",
     "node-sass": "^4.12.0",
@@ -31,18 +30,21 @@
     "sass-loader": "^8.0.0",
     "style-loader": "^1.0.0",
     "url-loader": "^2.1.0",
+    "webpack": "^4.40.2",
+    "webpack-cli": "^3.3.9",
     "webpack-dev-middleware": "^3.7.1",
     "webpack-dev-server": "^3.8.1",
-    "webpack-merge": "^4.2.2"
+    "webpack-merge": "^4.2.2",
+    "workbox-webpack-plugin": "^4.3.1"
   },
   "scripts": {
     "bundle": "webpack",
     "watch": "webpack --watch",
-    "start": "webpack-dev-server",
     "server": "node server.js",
     "dev": "webpack-dev-server --config ./build/webpack.dev.js",
     "build": "webpack --config ./build/webpack.prod.js",
-    "dev-build": "webpack --config ./build/webpack.dev.js"
+    "dev-build": "webpack --config ./build/webpack.dev.js",
+    "start": "http-server dist"
   },
   "author": "miaoruifeng",
   "license": "ISC",

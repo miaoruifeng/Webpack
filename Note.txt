@@ -279,8 +279,13 @@ tips: 前端解决优化问题，不应该把重点放在缓存上 而是更应�
 
 4-11、shimming 的作用
 ## 当第三方库需要引用另一个第三方库的方法时（eg: 引入jQuery），需要配置 ProvidePlugin 插件
+   new webpack.ProvidePlugin({ // shimming 垫片
+      $: 'jquery',
+      _join: ['lodash', 'join'] // 利用shimming自定义方法
+   })
 ## 模块里的 this 默认指向该模块
    使 this 总是指向 window : 安装loader -  npm install imports-loader -D  然后进行配置
+   js module下配置：loader: 'imports-loader?this=>window' // 使得this总是指向window
 Q: GUIDES -> Shamming
 
 4-12、环境变量的使用
@@ -304,6 +309,12 @@ Q: GUIDES -> Shamming
    既可以使用：npm install library(注意名字需要独特)
 
 5-2、PWA的打包配置 -- Progressive Web Application
-
+1. build 打包lesson目录
+2. 安装http-server: npm instal http-server --save-dev
+3. 配置 "start": "http-server dist"
+## PWA技术：服务器挂掉时 可以利用缓存还可以进行访问（只有要上线的代码需要pwa处理）
+   npm instll workbox-webpack-plugin --save-dev
+   然后配置
+   再写业务代码
 
 
