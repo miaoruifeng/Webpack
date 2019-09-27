@@ -284,3 +284,26 @@ tips: 前端解决优化问题，不应该把重点放在缓存上 而是更应�
 Q: GUIDES -> Shamming
 
 4-12、环境变量的使用
+
+///////////////////////////////////////////////
+5-1、Library的打包
+## 外部引用库可能有多种方法：
+   import: import library from 'library'
+   CommonJS: const library = require('library')
+   AMD: require(['library]', function() {})
+   则需要配置：librarTarget: 'umd'
+   script: <script src="library.js"></script> 
+   则需要配置：library: 'library'
+## 库里面已经引入了lodash 外部引用库是再次引入lodash 则会出问题
+   解决：配置externals: ['lodash'], // 打包时遇到lodash库 则忽略掉 不要打包到库里面去
+   这样：外部引用库的时候 需要先引入lodash，避免两次引入lodash
+## 提供给外部使用 需要更改入口文件路径： './dist/library.js'
+   npm 官网申请账号
+   npm adduser -- 用户名和密码
+   npm publish -- 把库发布到npm仓库 
+   既可以使用：npm install library(注意名字需要独特)
+
+5-2、PWA的打包配置 -- Progressive Web Application
+
+
+

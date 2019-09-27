@@ -1,2 +1,5 @@
 /lesson/node_modules/
 /lesson/dist/
+
+/library/node_modules/
+/library/dist/
