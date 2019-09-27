@@ -3,3 +3,6 @@
 
 /library/node_modules/
 /library/dist/
+
+/type-script/node_modules/
+/type-script/dist/
