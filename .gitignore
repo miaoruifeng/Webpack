@@ -6,3 +6,5 @@
 
 /type-script/node_modules/
 /type-script/dist/
+
+.gitignore
