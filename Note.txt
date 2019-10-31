@@ -319,4 +319,18 @@ Q: GUIDES -> Shamming
 
 5-3、TypeScript 的打包配置
 
+5-6、5-7、EsLint 在webpack中的配置
+1. 安装eslint
+2. 安装并配置eslint-loader
+3. 配置overlay：true
+
+### force：'pre' ---强制loader先执行
+
+5-8、5-9、5-10、5-11、5-12、Webpack性能优化
+## 提升webpack打包速度的方法
+1. 跟上技术的迭代（node npm yarn）
+2. 尽可能少的模块上应用loader --- 合理的使用include和exclude，降低loader的使用频率
+3. Plugin 尽可能精简并确保可靠
+4. resolve 参数合理配置 eg:  extensions: ['js', 'jsx'], mainFiles: ['index', 'child'], alias(别名)
+5. 使用DllPlugin 提高打包速度
 
