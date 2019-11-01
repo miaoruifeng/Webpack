@@ -340,3 +340,7 @@ Q: GUIDES -> Shamming
 10. 开发环境内存编译
 11. 开发环境无用插件剔除
 
+5-13、多页面打包配置
+
+plugins 里面配置多个 HtmlWebpackPlugin
+
